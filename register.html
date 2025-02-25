@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="login-container">
-        <h2>Вход</h2>
-        <form id="loginForm">
+        <h2>Регистрация</h2>
+        <form id="registerForm">
+            <div class="input-group">
+                <label for="username">Имя пользователя:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="username" required placeholder="Введите ваше имя">
+                    <button type="button" id="clearUsername" class="clear-button"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
             <div class="input-group">
                 <label for="email">Email:</label>
                 <div class="input-wrapper">
@@ -25,18 +32,13 @@
                     <button type="button" id="clearPassword" class="clear-button"><i class="fas fa-times"></i></button>
                 </div>
             </div>
-            <button type="submit">Войти</button>
-            <div class="social-login">
-                <p>Или войти через:</p>
-                <button type="button" id="vkLogin"><i class="fab fa-vk"></i> ВКонтакте</button>
-            </div>
+            <button type="submit">Зарегистрироваться</button>
             <p id="errorMessage" class="error-message"></p> <!-- Сообщение об ошибке -->
             <div class="auth-links">
-                <a href="forgot-password.html">Забыли пароль?</a>
-                <a href="register.html">Регистрация</a>
+                <a href="login.html">Уже есть аккаунт? Войти</a>
             </div>
         </form>
     </div>
-    <script src="login.js"></script>
+    <script src="register.js"></script>
 </body>
 </html>

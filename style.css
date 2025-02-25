@@ -1,3 +1,4 @@
+/* Общие стили для всех страниц */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -11,6 +12,7 @@ body {
     transition: background 0.5s ease;
 }
 
+/* Контейнер для форм */
 .login-container {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
@@ -22,8 +24,10 @@ body {
 
 .login-container h2 {
     margin-bottom: 20px;
+    color: #333;
 }
 
+/* Группы полей ввода */
 .input-group {
     margin-bottom: 15px;
     text-align: left;
@@ -32,16 +36,56 @@ body {
 .input-group label {
     display: block;
     margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
 }
 
-.input-group input {
+/* Контейнер для поля ввода и кнопки очистки */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
     width: 100%;
-    padding: 10px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 30px 10px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
 }
 
-button {
+.input-wrapper input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Кнопка очистки поля ввода */
+.clear-button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.clear-button:hover {
+    color: #777;
+}
+
+/* Основные кнопки (Войти, Зарегистрироваться, Отправить) */
+button[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #3498db;
@@ -49,33 +93,75 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
-button:hover {
+button[type="submit"]:hover {
     background-color: #2980b9;
 }
 
+/* Кнопка для входа через ВКонтакте */
 .social-login {
     margin-top: 20px;
 }
 
 .social-login button {
+    width: 100%;
+    padding: 10px;
     background-color: #4a76a8;
-    margin-top: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .social-login button:hover {
     background-color: #3b5f8a;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+/* Сообщения об ошибках */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
 }
 
+/* Ссылки для перехода между страницами */
+.auth-links {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-links a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* Анимация для иконок (если используются) */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Стили для иконок (если используются) */
 .icon-box {
     display: flex;
     flex-direction: column;
@@ -118,50 +204,52 @@ button:hover {
     color: #17202A;
 }
 
-@keyframes pulse {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
-    }
-}
-
-.task-menu {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Стили для страницы регистрации */
+.register-container {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    width: 400px;
-    max-height: 80vh;
-    overflow-y: auto;
-    z-index: 1000;
-    display: none;
+    width: 300px;
+    text-align: center;
 }
 
-.task-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+.register-container h2 {
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.task-menu-header h2 {
-    margin: 0;
-    font-size: 20px;
+/* Стили для страницы восстановления пароля */
+.forgot-password-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
 }
 
-#closeTaskMenu {
-    background-color: transparent;
+.forgot-password-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Стили для кнопки "Назад" */
+.back-button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #17202A;
+    color: #fff;
     border: none;
-    font-size: 20px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
+.back-button:hover {
+    background-color: #2C3E50;
+}
+
+/* Стили для списка задач */
 .task-list-container {
     max-height: 300px;
     overflow-y: auto;
@@ -202,6 +290,7 @@ button:hover {
     background-color: #c0392b;
 }
 
+/* Стили для формы задач */
 .task-form {
     display: flex;
     flex-direction: column;
@@ -226,70 +315,4 @@ button:hover {
 
 .task-form button:hover {
     background-color: #2980b9;
-}
-
-.error-message {
-    color: red;
-    font-size: 14px;
-    display: none;
-}
-
-#backToMain {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #17202A;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#backToMain:hover {
-    background-color: #2C3E50;
-}
-
-/* Стили для контейнера поля ввода */
-.input-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%; /* Чтобы контейнер занимал всю ширину */
-}
-
-/* Стили для поля ввода */
-.input-wrapper input {
-    width: 100%; /* Поле ввода занимает всю ширину контейнера */
-    padding: 10px 30px 10px 10px; /* Отступ справа для кнопки */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
-}
-
-/* Стили для кнопки очистки */
-.clear-button {
-    position: absolute;
-    right: 10px; /* Позиционируем кнопку справа */
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #ccc;
-    font-size: 16px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px; /* Фиксированная ширина для кнопки */
-    height: 20px; /* Фиксированная высота для кнопки */
-}
-
-.clear-button:hover {
-    color: #777; /* Изменение цвета при наведении */
-}
-
-/* Стили для сообщения об ошибке */
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-    display: none;
 }
