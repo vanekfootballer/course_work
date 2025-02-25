@@ -11,6 +11,63 @@ body {
     transition: background 0.5s ease;
 }
 
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.social-login {
+    margin-top: 20px;
+}
+
+.social-login button {
+    background-color: #4a76a8;
+    margin-top: 10px;
+}
+
+.social-login button:hover {
+    background-color: #3b5f8a;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -105,6 +162,12 @@ body {
     cursor: pointer;
 }
 
+.task-list-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
 #taskList {
     list-style: none;
     padding: 0;
@@ -117,10 +180,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #f9f9f9;
+    margin-bottom: 5px;
+    border-radius: 5px;
 }
 
-#taskList li:last-child {
-    border-bottom: none;
+#taskList li:hover {
+    background-color: #f1f1f1;
+}
+
+#taskList li button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#taskList li button:hover {
+    background-color: #c0392b;
 }
 
 .task-form {
@@ -167,4 +246,50 @@ body {
 
 #backToMain:hover {
     background-color: #2C3E50;
+}
+
+/* Стили для контейнера поля ввода */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Чтобы контейнер занимал всю ширину */
+}
+
+/* Стили для поля ввода */
+.input-wrapper input {
+    width: 100%; /* Поле ввода занимает всю ширину контейнера */
+    padding: 10px 30px 10px 10px; /* Отступ справа для кнопки */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+/* Стили для кнопки очистки */
+.clear-button {
+    position: absolute;
+    right: 10px; /* Позиционируем кнопку справа */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; /* Фиксированная ширина для кнопки */
+    height: 20px; /* Фиксированная высота для кнопки */
+}
+
+.clear-button:hover {
+    color: #777; /* Изменение цвета при наведении */
+}
+
+/* Стили для сообщения об ошибке */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
 }

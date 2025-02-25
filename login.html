@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Вход</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" required>
+                    <button type="button" id="clearEmail" class="clear-button"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="password">Пароль:</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" required>
+                    <button type="button" id="clearPassword" class="clear-button"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <button type="submit">Войти</button>
+            <div class="social-login">
+                <p>Или войти через:</p>
+                <button type="button" id="vkLogin"><i class="fab fa-vk"></i> ВКонтакте</button>
+            </div>
+            <p id="errorMessage" class="error-message"></p> <!-- Сообщение об ошибке -->
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         development: ['Кодинг', 'Тестирование', 'Анализ'],
         design: ['Прототипирование', 'Визуальный дизайн', 'Анимация']
     };
+
     const taskData = {
         marketing: [],
         management: [],
@@ -42,7 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div>Тип: ${task.type}</div>
                         <div>Дедлайн: ${task.deadline}</div>
                     </div>
-                    <button onclick="deleteTask('${category}', ${index})"><i class="fas fa-trash"></i></button>
+                    <div>
+                        <button onclick="editTask('${category}', ${index})"><i class="fas fa-edit"></i></button>
+                        <button onclick="deleteTask('${category}', ${index})"><i class="fas fa-trash"></i></button>
+                    </div>
                 `;
                 taskList.appendChild(li);
             });
@@ -54,6 +58,50 @@ document.addEventListener('DOMContentLoaded', () => {
         taskData[category].splice(index, 1);
         renderTasks(currentCategory);
     };
+
+    // Функция для редактирования задачи
+    window.editTask = function (category, index) {
+        const task = taskData[category][index];
+        taskInput.value = task.task;
+        taskDeadline.value = task.deadline;
+        taskType.value = task.type;
+        addTaskButton.textContent = 'Обновить задачу';
+        addTaskButton.onclick = function () {
+            taskData[category][index] = {
+                task: taskInput.value,
+                type: taskType.value,
+                deadline: taskDeadline.value
+            };
+            renderTasks(currentCategory);
+            taskInput.value = '';
+            taskDeadline.value = '';
+            addTaskButton.textContent = 'Добавить задачу';
+            addTaskButton.onclick = addTaskHandler;
+        };
+    };
+
+    // Обработчик добавления задачи
+    function addTaskHandler() {
+        const taskText = taskInput.value.trim();
+        const taskDeadlineValue = taskDeadline.value;
+        const taskTypeValue = taskType.value;
+        if (!taskText || !taskDeadlineValue) {
+            errorMessage.textContent = 'Пожалуйста, заполните все поля.';
+            errorMessage.style.display = 'block';
+            return;
+        }
+        errorMessage.style.display = 'none';
+        taskData[currentCategory].push({
+            task: taskText,
+            type: taskTypeValue,
+            deadline: taskDeadlineValue
+        });
+        renderTasks(currentCategory);
+        taskInput.value = '';
+        taskDeadline.value = '';
+    }
+
+    addTaskButton.addEventListener('click', addTaskHandler);
 
     // Обработчик клика по иконке категории
     iconBoxes.forEach(box => {
@@ -100,27 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         taskMenu.style.display = 'none';
         mainContainer.style.display = 'flex';
         document.body.style.background = 'linear-gradient(to right, #a7ffeb, #EC80FF)';
-    });
-
-    // Добавление новой задачи
-    addTaskButton.addEventListener('click', () => {
-        const taskText = taskInput.value.trim();
-        const taskDeadlineValue = taskDeadline.value;
-        const taskTypeValue = taskType.value;
-        if (!taskText || !taskDeadlineValue) {
-            errorMessage.textContent = 'Пожалуйста, заполните все поля.';
-            errorMessage.style.display = 'block';
-            return;
-        }
-        errorMessage.style.display = 'none';
-        taskData[currentCategory].push({
-            task: taskText,
-            type: taskTypeValue,
-            deadline: taskDeadlineValue
-        });
-        renderTasks(currentCategory);
-        taskInput.value = '';
-        taskDeadline.value = '';
     });
 
     // Возврат на главную страницу
