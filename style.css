@@ -151,24 +151,24 @@ button[type="submit"]:hover {
     text-decoration: underline;
 }
 
-/* Анимация для иконок (если используются) */
-@keyframes pulse {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
-    }
+/* Стили для контейнера иконок на главной странице */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
-/* Стили для иконок (если используются) */
+/* Стили для иконок */
 .icon-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 175px;
-    height: 300px;
+    width: 200px; /* Увеличенный размер */
+    height: 200px; /* Увеличенный размер */
     background-color: rgba(23, 32, 42, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -183,7 +183,7 @@ button[type="submit"]:hover {
 }
 
 .icon-box i {
-    font-size: 60px;
+    font-size: 60px; /* Увеличенный размер иконки */
     margin-bottom: 15px;
     color: #3498db;
     transition: color 0.3s ease;
@@ -195,7 +195,7 @@ button[type="submit"]:hover {
 }
 
 .icon-box span {
-    font-size: 16px;
+    font-size: 18px; /* Увеличенный размер текста */
     color: #fff;
     transition: color 0.3s ease;
 }
@@ -204,56 +204,50 @@ button[type="submit"]:hover {
     color: #17202A;
 }
 
-/* Стили для страницы регистрации */
-.register-container {
+/* Анимация для иконок */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Стили для меню задач */
+.task-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    width: 300px;
-    text-align: center;
-}
-
-.register-container h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Стили для страницы восстановления пароля */
-.forgot-password-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-}
-
-.forgot-password-container h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Стили для кнопки "Назад" */
-.back-button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #17202A;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.back-button:hover {
-    background-color: #2C3E50;
-}
-
-/* Стили для списка задач */
-.task-list-container {
-    max-height: 300px;
+    width: 400px;
+    max-height: 80vh;
     overflow-y: auto;
-    margin-bottom: 20px;
+    z-index: 1000;
+    display: none;
+}
+
+.task-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-menu-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+#closeTaskMenu {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 #taskList {
@@ -268,29 +262,12 @@ button[type="submit"]:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f9f9f9;
-    margin-bottom: 5px;
-    border-radius: 5px;
 }
 
-#taskList li:hover {
-    background-color: #f1f1f1;
+#taskList li:last-child {
+    border-bottom: none;
 }
 
-#taskList li button {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-#taskList li button:hover {
-    background-color: #c0392b;
-}
-
-/* Стили для формы задач */
 .task-form {
     display: flex;
     flex-direction: column;
@@ -315,4 +292,18 @@ button[type="submit"]:hover {
 
 .task-form button:hover {
     background-color: #2980b9;
+}
+
+#backToMain {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #17202A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#backToMain:hover {
+    background-color: #2C3E50;
 }

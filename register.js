@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Если всё в порядке, переходим на страницу входа
-        window.location.href = 'login.html';
+        // Если всё в порядке, переходим на главную страницу
+        window.location.href = 'index.html';
     });
 
     // Функция для проверки email
