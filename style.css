@@ -167,8 +167,8 @@ button[type="submit"]:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 200px; /* Увеличенный размер */
-    height: 200px; /* Увеличенный размер */
+    width: 200px; 
+    height: 350px; 
     background-color: rgba(23, 32, 42, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -183,7 +183,7 @@ button[type="submit"]:hover {
 }
 
 .icon-box i {
-    font-size: 60px; /* Увеличенный размер иконки */
+    font-size: 60px; 
     margin-bottom: 15px;
     color: #3498db;
     transition: color 0.3s ease;
@@ -195,7 +195,7 @@ button[type="submit"]:hover {
 }
 
 .icon-box span {
-    font-size: 18px; /* Увеличенный размер текста */
+    font-size: 18px; 
     color: #fff;
     transition: color 0.3s ease;
 }
