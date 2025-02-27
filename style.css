@@ -307,3 +307,12 @@ button[type="submit"]:hover {
 #backToMain:hover {
     background-color: #2C3E50;
 }
+
+/* Стили для заголовков подкатегорий */
+#taskList h3 {
+    margin: 15px 0 10px 0;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
