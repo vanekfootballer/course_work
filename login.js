@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Проверка пароля (просто пример)
+        // Проверка пароля 
         if (!password) {
             errorMessage.textContent = 'Пожалуйста, введите пароль';
             errorMessage.style.display = 'block';
