@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const codeForm = document.getElementById('codeForm');
     const resendCodeButton = document.getElementById('resendCode');
     const timerDisplay = document.getElementById('timer');
-    const clearCodeButton = document.getElementById('clearCode'); // Кнопка очистки кода
+    const clearCodeButton = document.getElementById('clearCode'); 
 
     let countdown;
     let codeSent = false;
