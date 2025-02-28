@@ -41,8 +41,10 @@
     </div>
 
     <!-- Форма для ввода кода подтверждения -->
-    <div class="login-container" id="verificationForm" style="display: none;">
-        <h2>Подтверждение email</h2>
+    <div class="verification-container" id="verificationForm" style="display: none;">
+        <div class="verification-icon">
+            <i class="fas fa-user-lock"></i> <!-- Иконка подтверждения -->
+        </div>
         <p>На ваш email отправлен код подтверждения. Введите его ниже:</p>
         <form id="codeForm">
             <div class="input-group">
@@ -55,6 +57,7 @@
             <button type="submit">Подтвердить</button>
             <p id="codeErrorMessage" class="error-message"></p>
             <button type="button" id="resendCode">Отправить код повторно</button>
+            <p id="timer"></p>
         </form>
     </div>
 
