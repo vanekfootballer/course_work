@@ -284,11 +284,6 @@ button[type="submit"]:hover {
     align-items: center;
 }
 
-/* Убираем нижнюю границу у последнего элемента списка */
-#taskList li:last-child {
-    border-bottom: none;
-}
-
 /* Форма для добавления задач */
 .task-form {
     display: flex;
